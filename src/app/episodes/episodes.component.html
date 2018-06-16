@@ -1,0 +1,12 @@
+<div class="bottomRightTile">
+	<a class="archive" href="google.com">Archive</a>
+	<div class = "episodes" *ngFor = "let episode of episodes" (click) = "onSelect(episode)">
+		<span> 00{{episode.number}} </span>
+	</div>
+</div>
+
+<div *ngIf = "selectedEpisode">
+	<audio class="audioPlayer" controls>
+		<source src="../../assets/mp3/002.mp3" type="audio/mpeg">
+	</audio>
+</div>	
