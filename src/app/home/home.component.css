@@ -1,0 +1,17 @@
+.homeContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "left right";
+}
+
+.titleAndSlogan {
+	display: flex;
+	grid-area: left;
+	flex-direction: column;
+	align-self: center;
+}
+.title {
+	font-size: 6em;
+	color: darkorange;
+}
