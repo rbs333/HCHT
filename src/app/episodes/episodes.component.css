@@ -1,0 +1,23 @@
+.episodeViewContainer {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: "audioPanel episodes";
+	grid-column-gap: 1em;
+}
+
+.audioPanel {
+	grid-area: audioPanel;
+}
+
+.episodes {
+	grid-area: episodes;
+	display: inline-flex;
+	flex-wrap: wrap;
+}
+
+.episodeCard {
+	display: inline-block;
+	margin: .5em;
+	max-width: 7em;
+}
