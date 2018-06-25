@@ -21,3 +21,8 @@
 	margin: .5em;
 	max-width: 7em;
 }
+
+.episodeCard:Hover {
+	background-color: lightyellow;
+	color: black;
+}

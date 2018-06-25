@@ -10,10 +10,16 @@ import { Episode } from './episode';
 export class EpisodesComponent implements OnInit {
   
   episodes = EPISODES; 
+  selectedEpisode: Episode;
   
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setSelected(event) {
+  	this.selectedEpisode = event;
+  	console.log(event);
   }
 
 }

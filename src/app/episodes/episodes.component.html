@@ -3,13 +3,13 @@
 		<h2> I am the audio player </h2>
 	</div>
 	<div class="episodes">
-		<mat-card class="episodeCard" *ngFor="let episode of episodes">
+		<mat-card class="episodeCard" *ngFor="let episode of episodes" (click)="setSelected($event.target.value)" value ="episode">
 			<mat-card-header>
-				<mat-card-subtitle> {{episode.number}} </mat-card-subtitle>
+				<!-- <mat-card-subtitle> {{episode.number}} </mat-card-subtitle> -->
 			</mat-card-header>
 			<img mat-card-image src="{{episode.img}}">
 			<mat-card-footer> 
-				<mat-card-title> {{episode.title}} </mat-card-title>
+				<mat-card-title> {{episode.number}} </mat-card-title>
 			</mat-card-footer>
 		</mat-card>
 	</div>
