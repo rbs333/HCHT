@@ -10,6 +10,7 @@ import { Episode } from './episode';
 export class EpisodesComponent implements OnInit {
   
   episodes = EPISODES; 
+  selected = false;
   selectedEpisode = new Episode();
   
   constructor() { }
@@ -17,9 +18,13 @@ export class EpisodesComponent implements OnInit {
   ngOnInit() {
   }
 
+  close() {
+    this.selected = false;
+  }
+  
   setSelected(episode: Episode) {
+    this.selected = true;
   	this.selectedEpisode = episode;
-  	console.log(this.selectedEpisode);
   }
 
 }

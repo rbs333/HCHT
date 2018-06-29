@@ -1,6 +1,9 @@
 <div class="episodeViewContainer">
-	<div class="audioPanel">
-		<h3> {{selectedEpisode.title}} </h3>
+	<div class="audioPanel" *ngIf="selected">
+		<br/>
+		<button class="closeBtn" (click)="close()">X</button>
+		<div class="title"> {{selectedEpisode.title}} </div><br/>
+		<div class="description"> {{selectedEpisode.summary}}</div><br/>
 		<audio controls src="{{selectedEpisode.audio}}" type="audio/mpeg"></audio>
 	</div>
 	<div class="episodes">
