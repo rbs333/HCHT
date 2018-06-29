@@ -31,7 +31,8 @@ audio {
 .episodeCard {
 	display: inline-block;
 	margin: .625em;
-	max-width: 7.5em;
+	width: 40%;
+	max-width: 10em;
 }
 
 .episodeCard:Hover {
