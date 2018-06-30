@@ -1,15 +1,20 @@
 .episodeViewContainer {
 	display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: 0 1fr;
 	grid-template-rows: auto;
 	grid-template-areas: "audioPanel episodes";
-	grid-column-gap: 1em;
+	transition: 0.5s;
 }
 
 .audioPanel {
 	grid-area: audioPanel;
+	background-color: white;
+	color: black;
 	max-width: 300px;
 	padding: .625em;
+	overflow-x: hidden;
+	width: 0px;
+	transition: 0.7s;
 }
 
 .closeBtn {
@@ -26,16 +31,24 @@ audio {
 	display: inline-flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	background-color: white;
 }
 
 .episodeCard {
 	display: inline-block;
 	margin: .625em;
-	width: 40%;
-	max-width: 10em;
+	width: 35%;
+	max-width: 12em;
 }
 
 .episodeCard:Hover {
 	background-color: lightyellow;
 	color: black;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side 
+navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
 }
