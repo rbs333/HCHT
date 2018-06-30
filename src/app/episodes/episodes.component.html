@@ -1,15 +1,13 @@
 <div id="episodeViewContainer" class="episodeViewContainer">
 	<mat-card id="audioPanel" class="audioPanel">
 		<button class="closeBtn" (click)="close()">X</button>
-		<div class="title"> {{selectedEpisode.title}} </div><br/>
+		<div class="title"> I am the audio{{selectedEpisode.title}} </div><br/>
 		<div class="description"> {{selectedEpisode.summary}}</div><br/>
 		<audio controls src="{{selectedEpisode.audio}}" type="audio/mpeg"></audio>
 	</mat-card>
 	<mat-card class="episodes">
 		<mat-card class="episodeCard" *ngFor="let episode of episodes" (click)="setSelected(episode)">
-			<mat-card-header>
-				<!-- <mat-card-subtitle> {{episode.number}} </mat-card-subtitle> -->
-			</mat-card-header>
+			<mat-card-header></mat-card-header>
 			<img mat-card-image src="{{episode.img}}">
 			<mat-card-footer> 
 				<mat-card-title> {{episode.number}} </mat-card-title>

@@ -20,17 +20,10 @@ export class EpisodesComponent implements OnInit {
 
   close() {
     this.selected = false;
-    document.getElementById("audioPanel").style.width = "0";
-    document.getElementById("episodeViewContainer").style.gridTemplateColumns = "0 1fr";
-    // document.getElementById("main").style.marginLeft = "0";
   }
 
   setSelected(episode: Episode) {
     this.selected = true;
   	this.selectedEpisode = episode;
-    document.getElementById("episodeViewContainer").style.gridTemplateColumns = "auto 1fr";
-    document.getElementById("audioPanel").style.width = "300px";
-    // document.getElementById("episodeViewContainer").style.marginLeft = "300px";
-    // document.getElementById("audioPanel").style.right = "0px";
   }
 }
