@@ -4,4 +4,5 @@ export class Episode {
 	title: string;
 	summary: string;
 	img: string;
+	audio: string;
 }
