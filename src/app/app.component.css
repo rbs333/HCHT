@@ -1,6 +1,19 @@
 .rootContainer {
 	font-family: 'Roboto', sans-serif;
 }
+
+.header {
+}
+
+.header mat-card {
+	width: 100%;
+}
+body {
+	display: block;
+	margin: 0;
+	width: 100%;
+}
+
 .title {
 	font-size: 1.5rem;
 }
