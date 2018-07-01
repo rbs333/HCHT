@@ -20,10 +20,12 @@ export class EpisodesComponent implements OnInit {
 
   close() {
     this.selected = false;
+    document.getElementById('episodeViewContainer').style.transform = "translateX(0)";
   }
 
   setSelected(episode: Episode) {
     this.selected = true;
   	this.selectedEpisode = episode;
+    document.getElementById('episodeViewContainer').style.transform = "translateX(348px)";
   }
 }
