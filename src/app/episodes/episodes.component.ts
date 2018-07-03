@@ -27,5 +27,8 @@ export class EpisodesComponent implements OnInit {
     this.selected = true;
   	this.selectedEpisode = episode;
     document.getElementById('audioPanel').style.transform = "translateY(-100%)";
+    var width = document.getElementById('rootContainer').clientWidth;
+    console.log(width);
+    document.getElementById('audioPanel').style.width = width + "px";
   }
 }

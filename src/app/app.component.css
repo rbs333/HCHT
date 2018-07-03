@@ -3,8 +3,15 @@
 	width: 100%;
 }
 
-.header mat-card {
+.header {
+	position: relative;
+	top: -.625rem;
+	left: -.625rem;
+	display: block;
+	padding: 10px;
 	width: 100%;
+	background-color: black;
+	color: white;
 }
 
 .title {
