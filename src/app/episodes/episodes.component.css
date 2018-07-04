@@ -1,54 +1,51 @@
-.episodeViewContainer {
-	display: grid;
-	grid-template-columns: 0 1fr;
-	grid-template-rows: auto;
-	grid-template-areas: "audioPanel episodes";
-	transition: 0.5s;
-}
-
 .audioPanel {
-	grid-area: audioPanel;
-	background-color: white;
-	color: black;
-	max-width: 300px;
-	padding: .625em;
-	overflow-x: hidden;
-	width: 0px;
-	transition: 0.7s;
+	position: fixed;
+	width: 100%;
+	top: 100%;
+	left: 0;
+	z-index: 100;
+	text-align: center;
+	transition: transform .6s ease;
+	padding: 10px;
+	background-color: black;
+	color: white;
 }
 
 .closeBtn {
 	float: right;
-}
-
-audio {
-	margin-top: 10px;
-	float: bottom;
+	margin: 10px;
 }
 
 .episodes {
-	grid-area: episodes;
 	display: inline-flex;
+	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: space-around;
 	background-color: white;
 }
 
 .episodeCard {
-	display: inline-block;
-	margin: .625em;
-	width: 35%;
-	max-width: 12em;
+	width: auto;
+	max-width: none;
+	margin: .625rem;
 }
+
 
 .episodeCard:Hover {
 	background-color: lightyellow;
 	color: black;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side 
-navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
+@media only screen and (min-width: 500px) {
+	.episodes {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		
+	}
+	.episodeCard {
+		display: inline-block;
+		width: 35%;
+		max-width: 12em;
+	}
 }
