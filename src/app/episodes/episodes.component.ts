@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EPISODES } from './mock-episodes';
+import { EpisodesService } from '../services/episodes.service';
 import { Episode } from './episode';
 
 @Component({
@@ -9,13 +9,19 @@ import { Episode } from './episode';
 })
 export class EpisodesComponent implements OnInit {
   
-  episodes = EPISODES; 
   selected = false;
-  selectedEpisode = new Episode();
+  selectedEpisode = new Episode(); 
+  episodes = new Array<Episode>();
   
-  constructor() { }
+  constructor(private episodesService: EpisodesService) { }
 
   ngOnInit() {
+    this.getEpisodes();
+  }
+
+  getEpisodes(): void {
+    this.episodesService.getEpisodes()
+    .subscribe(episodes => this.episodes = episodes);
   }
 
   close() {

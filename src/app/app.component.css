@@ -3,19 +3,22 @@
 	width: 100%;
 }
 
-.header {
+.navBar {
+	display: block;
 	position: relative;
 	top: -.625rem;
 	left: -.625rem;
-	display: block;
 	padding: 10px;
 	width: 100%;
-	background-color: black;
-	color: white;
+	background-color: darkgray;
+	color: black;
 }
 
 .title {
-	font-size: 1.5rem;
+	float: center;
+	font-size: 1.25rem;
+	font-style: italic;
+	font-weight: bold;
 }
 .slogan {
 	font-size: .75rem;

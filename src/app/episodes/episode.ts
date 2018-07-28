@@ -1,8 +1,8 @@
 
 export class Episode {
-	number: string;
 	title: string;
-	summary: string;
-	img: string;
-	audio: string;
+	number: string;
+	description: string;
+	imageLoc: string;
+	mp3Loc: string;
 }
