@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -12,12 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     AppComponent,
     HomePageComponent,
-    EpisodesComponent
+    EpisodesComponent,
   ],
   imports: [
     BrowserModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

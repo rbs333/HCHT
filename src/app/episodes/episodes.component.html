@@ -1,12 +1,12 @@
 <div id="audioPanel" class="audioPanel">
 	<button class="closeBtn" (click)="close()">X</button>
 	<div class="title">{{selectedEpisode.title}} </div><br/>
-	<audio controls src="{{selectedEpisode.audio}}" type="audio/mpeg"></audio>
+	<audio controls src="{{selectedEpisode.mp3Loc}}" type="audio/mpeg"></audio>
 </div>
 <div id="episodes" class="episodes">
 	<mat-card class="episodeCard" *ngFor="let episode of episodes" (click)="setSelected(episode)">
 		<mat-card-header></mat-card-header>
-		<img mat-card-image src="{{episode.img}}">
+		<img mat-card-image src="{{episode.imageLoc}}">
 		<mat-card-footer> 
 			<mat-card-title> {{episode.number}} </mat-card-title>
 		</mat-card-footer>
