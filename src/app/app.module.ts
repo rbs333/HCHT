@@ -7,7 +7,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { EpisodesComponent } from './episodes/episodes.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     MatCardModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule, 
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
