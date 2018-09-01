@@ -1,11 +1,24 @@
 .rootContainer {
 	font-family: 'Roboto', sans-serif;
 	width: 100%;	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: "header" "body" "footer";
 }
 
 mat-toolbar {
-	display: flex;
-	align-items: center;
+	grid-area: header;
+	display: grid;
+	grid-template-columns: 10% 80% 10%;
+	grid-template-areas: "spaceL content spaceR";
+}
+
+.content {
+	grid-area: content;
+}
+mat-toolbar img {
+	grid-column: 2;
 }
 
 .navBar {

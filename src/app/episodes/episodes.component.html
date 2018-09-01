@@ -1,16 +1,13 @@
 <div id="audioPanel" class="audioPanel">
 	<button mat-raised-button color="primary" class="closeBtn" (click)="close()">X</button>
 	<div class="title">{{selectedEpisode.title}}</div><br/>
-	<audio controls src="{{selectedEpisode.mp3Loc}}" type="audio/mpeg"></audio>
+	<mat-icon *ngIf="!this.activeAudio" style="font-size: 3em" (click)="playAudio()">play_circle_outline</mat-icon>
+	<mat-icon *ngIf="this.activeAudio" style="font-size: 3em" (click)="pauseAudio()">pause_circle_outline</mat-icon>
 </div>
 <div id="episodes" class="episodes">
-	<button mat-raised-button color="accent"></button>
 	<mat-card class="episodeCard" *ngFor="let episode of episodes" (click)="setSelected(episode)">
 		<mat-card-header ></mat-card-header>
 		<img mat-card-image src="{{episode.imageLoc}}">
-		<!-- <mat-card-footer> 
-			<mat-card-title> {{episode.number}} </mat-card-title>
-		</mat-card-footer> -->
 	</mat-card>
 </div>
 

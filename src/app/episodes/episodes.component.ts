@@ -12,7 +12,9 @@ export class EpisodesComponent implements OnInit {
   selected = false;
   selectedEpisode = new Episode(); 
   episodes = new Array<Episode>();
-  
+  audio = new Audio();
+  activeAudio = false;
+
   constructor(private episodesService: EpisodesService) { }
 
   ngOnInit() {
@@ -36,5 +38,17 @@ export class EpisodesComponent implements OnInit {
     var width = document.getElementById('rootContainer').clientWidth;
     console.log(width);
     document.getElementById('audioPanel').style.width = width + "px";
+  }
+
+  playAudio(){
+    this.audio.src = this.selectedEpisode.mp3Loc;
+    this.audio.load();
+    this.audio.play();
+    this.activeAudio = true;
+   }
+
+  pauseAudio(){
+    this.audio.pause();
+    this.activeAudio = false;
   }
 }
