@@ -3,6 +3,8 @@
 	<div class="title">{{selectedEpisode.title}}</div><br/>
 	<mat-icon *ngIf="!this.activeAudio" style="font-size: 3em" (click)="playAudio()">play_circle_outline</mat-icon>
 	<mat-icon *ngIf="this.activeAudio" style="font-size: 3em" (click)="pauseAudio()">pause_circle_outline</mat-icon>
+	<mat-progress-bar mode="determinate" [value]="this.currentTime"></mat-progress-bar>
+
 </div>
 <div id="episodes" class="episodes">
 	<mat-card class="episodeCard" *ngFor="let episode of episodes" (click)="setSelected(episode)">

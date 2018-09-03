@@ -14,8 +14,10 @@ export class EpisodesComponent implements OnInit {
   episodes = new Array<Episode>();
   audio = new Audio();
   activeAudio = false;
+  currentTime: any = "";
 
-  constructor(private episodesService: EpisodesService) { }
+  constructor(private episodesService: EpisodesService) {
+  }
 
   ngOnInit() {
     this.getEpisodes();
@@ -36,7 +38,6 @@ export class EpisodesComponent implements OnInit {
   	this.selectedEpisode = episode;
     document.getElementById('audioPanel').style.transform = "translateY(-100%)";
     var width = document.getElementById('rootContainer').clientWidth;
-    console.log(width);
     document.getElementById('audioPanel').style.width = width + "px";
   }
 
@@ -45,6 +46,9 @@ export class EpisodesComponent implements OnInit {
     this.audio.load();
     this.audio.play();
     this.activeAudio = true;
+    this.audio.addEventListener("timeupdate", (currentTime)=>{
+      this.currentTime = (this.audio.currentTime / this.audio.duration) * 100;
+    });
    }
 
   pauseAudio(){
