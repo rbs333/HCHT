@@ -3,11 +3,23 @@
 	<div class="title">{{selectedEpisode.title}}</div><br/>
 	<mat-icon *ngIf="!this.activeAudio" style="font-size: 3em" (click)="playAudio()">play_circle_outline</mat-icon>
 	<mat-icon *ngIf="this.activeAudio" style="font-size: 3em" (click)="pauseAudio()">pause_circle_outline</mat-icon>
+	<br>
+	<span class="spacer"></span>
+	<mat-icon (click)="download()">save_alt</mat-icon>
+	<mat-progress-bar mode="determinate" [value]="this.currentTime"></mat-progress-bar>
 </div>
 <div id="episodes" class="episodes">
 	<mat-card class="episodeCard" *ngFor="let episode of episodes" (click)="setSelected(episode)">
-		<mat-card-header ></mat-card-header>
+		<mat-card-header></mat-card-header>
 		<img mat-card-image src="{{episode.imageLoc}}">
+		<mat-progress-bar mode="determinate" [value]="this.currentTime"></mat-progress-bar>
+		<mat-card-actions>
+			<!-- <div style="display:flex; justify-content: space-between;"> -->
+				<mat-icon *ngIf="!this.activeAudio" (click)="playAudio()">play_circle_outline</mat-icon>
+				<mat-icon *ngIf="this.activeAudio" (click)="pauseAudio()">pause_circle_outline</mat-icon>
+				<mat-icon (click)="download()">save_alt</mat-icon>
+			<!-- </div> -->
+		</mat-card-actions>
 	</mat-card>
 </div>
 
