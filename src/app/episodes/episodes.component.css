@@ -1,56 +1,47 @@
-.audioPanel {
-	position: fixed;
-	width: 100%;
-	top: 100%;
-	left: 0;
-	z-index: 100;
-	text-align: center;
-	transition: transform .6s ease;
-	padding: 10px;
-	background-color: black;
-	color: white;
-}
-
-.closeBtn {
-	float: right;
+.episodeImg {
+	width: calc(100% - 600px);
+	padding: 0 300px;
 	margin: 10px;
 }
 
-.episodes {
-	display: inline-flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	background-color: white;
+mat-icon {
+	width: 2rem;
+	margin: 10px;
 }
 
-.episodeCard {
-	width: auto;
-	max-width: none;
-	margin: .625rem;
+.watch {
+	margin: 10px;
 }
 
-
-.episodeCard:Hover {
-	background-color: lightyellow;
-	color: black;
+.audioPlayer {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas: "action info download"
+						 "pBar pBar pBar";
+	height: 3rem;
+	margin: 10px;
+	border: 3px solid darkgrey;
+	border-radius: 2px;
+	padding: 10px;
 }
 
-.spacer {
-	display: flex;
-	flex: 1 1 1;
+mat-progress-bar {
+	grid-area: pBar;
 }
 
-@media only screen and (min-width: 500px) {
-	.episodes {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		
-	}
-	.episodeCard {
-		display: inline-block;
-		width: 35%;
-		max-width: 12em;
-	}
+.info {
+	grid-area: info;
+}
+
+.downloadBtn {
+	grid-area: download;
+}
+
+.playBtn {
+	grid-area: action;
+}
+
+.pauseBtn {
+	grid-area: action;
 }

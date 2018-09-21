@@ -1,4 +1,4 @@
-<div id="audioPanel" class="audioPanel">
+<!-- <div id="audioPanel" class="audioPanel">
 	<button mat-raised-button color="primary" class="closeBtn" (click)="close()">X</button>
 	<div class="title">{{selectedEpisode.title}}</div><br/>
 	<mat-icon *ngIf="!this.activeAudio" style="font-size: 3em" (click)="playAudio()">play_circle_outline</mat-icon>
@@ -7,19 +7,21 @@
 	<span class="spacer"></span>
 	<mat-icon (click)="download()">save_alt</mat-icon>
 	<mat-progress-bar mode="determinate" [value]="this.currentTime"></mat-progress-bar>
-</div>
+</div> -->
 <div id="episodes" class="episodes">
-	<mat-card class="episodeCard" *ngFor="let episode of episodes" (click)="setSelected(episode)">
-		<mat-card-header></mat-card-header>
-		<img mat-card-image src="{{episode.imageLoc}}">
-		<mat-progress-bar mode="determinate" [value]="this.currentTime"></mat-progress-bar>
-		<mat-card-actions>
-			<!-- <div style="display:flex; justify-content: space-between;"> -->
-				<mat-icon *ngIf="!this.activeAudio" (click)="playAudio()">play_circle_outline</mat-icon>
-				<mat-icon *ngIf="this.activeAudio" (click)="pauseAudio()">pause_circle_outline</mat-icon>
-				<mat-icon (click)="download()">save_alt</mat-icon>
-			<!-- </div> -->
-		</mat-card-actions>
-	</mat-card>
+	<ng-container *ngFor="let episode of episodes">
+		<img class="episodeImg" src="{{episode.imageLoc}}">
+		<div class="audioPlayer">
+			<mat-progress-bar mode="determinate" [value]="this.currentTime"></mat-progress-bar>
+			<mat-icon class="playBtn" *ngIf="!this.activeAudio" (click)="playAudio()">play_circle_outline</mat-icon>
+			<mat-icon class="pauseBtn" *ngIf="this.activeAudio" (click)="pauseAudio()">pause_circle_outline</mat-icon>
+			<span class="downloadBtn">download</span>
+			<span class="info">{{episode.title}}</span>
+		</div>
+		<div class="watch">Watch:<br>
+			Segments: <a href="http:\\YoutTube.com">link</a> <br>
+			Conversation: <a href="http:\\YoutTube.com">link</a>
+		</div>
+	</ng-container>
 </div>
 
